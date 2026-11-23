@@ -23,8 +23,8 @@
     {
       "path": "exports/character.obonb",
       "format": "obonb",
-      "bytes": 440103,
-      "sha256": "8bef7dc56f19f5ae366ff172eb7c916b2075748df56b890c8c2a9464578d6a73",
+      "bytes": 443980,
+      "sha256": "eb470afb5964ae825913ed8091c8a337da07bf27458e0df289612846d094e40c",
       "embedded_atlas": true,
       "atlas_resolution_scale": 0.5
     }
@@ -159,7 +159,7 @@
   "quality": {
     "metrics": {
       "silhouette_iou_percent": 99.954,
-      "outside_face_rgb_mean_absolute_error_0_255": 1.443,
+      "outside_face_rgb_mean_absolute_error_0_255": 1.442,
       "matching_loop_endpoints": {
         "idle": true,
         "sleep": true
@@ -183,12 +183,27 @@
     "requires": "OpenBone weighted meshes, slots and state machines."
   },
   "expression_revision": {
-    "version": 6,
+    "version": 7,
     "eyes_redrawn_open": true,
     "visible_eyes": 2,
     "mouth_cavity_redrawn": true,
     "beak_preserved": false,
-    "sprite_eye_anchors_px": [],
+    "sprite_eye_anchors_px": [
+      [
+        520.0,
+        446.5,
+        57.0,
+        63.91,
+        0.0
+      ],
+      [
+        662.5,
+        440.0,
+        39.75,
+        51.46,
+        0.0
+      ]
+    ],
     "preview": "previews/face_expressions.jpg",
     "default_eyes": "eyes_open",
     "default_mouth": "mouth_relaxed"

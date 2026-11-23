@@ -32,7 +32,7 @@ PROFILE_REVISIONS['dessert_panda','young'] = 4
 
 def expression_version(identity, redrawn=False):
     if redrawn:
-        return 7
+        return 8
     return PROFILE_REVISIONS.get(identity,EXPRESSION_REVISION)
 
 
@@ -301,6 +301,59 @@ def heal_surface(pixels, eye_support, mouth_support, identity, eyes, profile):
     return Image.fromarray(surface)
 
 
+def isolate_iris(cleaned, surface, eye):
+    left,top,right,bottom = eye['box']
+    box = (left-3,top-3,right+3,bottom+3)
+    source = cleaned.crop(box)
+    rgb = np.asarray(source,dtype=np.int16)[...,:3]
+    skin = np.asarray(surface.crop(box),dtype=np.int16)[...,:3]
+    diff = np.max(np.abs(rgb-skin),axis=2)
+    allowed = eye['mask'][box[1]:box[3],box[0]:box[2]] != 0
+    ink = (allowed & (diff >= 21)).astype(np.uint8)
+    contours,_ = cv2.findContours(ink,cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
+    if not contours:
+        raise ValueError(f'No ImageGen iris inside {eye["box"]}')
+    matte = np.zeros_like(ink)
+    cv2.drawContours(matte,[max(contours,key=cv2.contourArea)],0,255,cv2.FILLED)
+    matte = Image.fromarray(matte).filter(ImageFilter.MaxFilter(3)).filter(ImageFilter.GaussianBlur(.65))
+    sprite = mask_layer(source,matte)
+    x0,y0,x1,y1 = matte.getbbox()
+    center = (box[0]+(x0+x1)/2,box[1]+(y0+y1)/2)
+    return sprite.crop((x0,y0,x1,y1)),center
+
+
+def balance_axis(first, second, minimum_ratio):
+    smaller,larger = sorted((first,second))
+    if smaller/larger >= minimum_ratio:
+        return first,second
+    smaller = round((first+second)*minimum_ratio/(1+minimum_ratio))
+    larger = first+second-smaller
+    return (smaller,larger) if first<second else (larger,smaller)
+
+
+def balanced_iris_poses(cleaned, surface, eyes, pixels, mouth_core, slug):
+    parts,centers = zip(*(isolate_iris(cleaned,surface,eye) for eye in eyes))
+    widths = balance_axis(*(p.width for p in parts),.86 if slug=='bamboo_panda' else .90)
+    heights = balance_axis(*(p.height for p in parts),.91)
+    frames = {name:Image.new('RGBA',MASTER_SIZE) for name in ('eyes_open','eyes_lid_mid','eyes_lid_low')}
+    geometry = []
+    face_center = sum(c[0] for c in centers)/2
+    for part,(cx,cy),width,height in zip(parts,centers,widths,heights,strict=True):
+        inward = max(0,width-part.width)*.23
+        cx += inward if cx<face_center else -inward
+        geometry.append((cx,cy,width,height,0.))
+        for (name,frame),ratio in zip(frames.items(),(1.,.55,.26),strict=True):
+            aperture = max(1,round(height*ratio))
+            crop = part.resize((width,aperture),Image.Resampling.LANCZOS)
+            pose = Image.new('RGBA',MASTER_SIZE)
+            pose.alpha_composite(crop,(round(cx-width/2),round(cy-aperture/2)))
+            if name=='eyes_open' and not opaque_support(pose,pixels,mouth_core):
+                raise ValueError(f'Balanced eye exceeds the painted face around {(cx,cy)}')
+            frame.alpha_composite(pose)
+    frames['eyes_glance'] = frames['eyes_open']
+    return frames,geometry
+
+
 def prepare_expression_layers(cleaned, face, target, identity, redrawn=False):
     slug, stage = identity
     profile = IMAGEGEN_GUIDES[slug] if redrawn else {}
@@ -320,9 +373,14 @@ def prepare_expression_layers(cleaned, face, target, identity, redrawn=False):
     inside = cv2.distanceTransform(opaque_skin.astype(np.uint8),cv2.DIST_L2,3) >= 4
     fringe = (cv2.dilate(mouth_core.astype(np.uint8),np.ones((13,13),np.uint8)) != 0) & inside
     mouth_support = (mouth_core | fringe) & opaque_skin & ~eye_support
+    surface = heal_surface(pixels,eye_support,mouth_support,identity,eyes,profile)
     source_closed = face['closed'] and not redrawn
     drawn_eyes, geometry = eye_variants(eyes,pixels,slug,stage,source_closed,mouth)
-    if source_closed:
+    if redrawn and len(eyes)==2:
+        drawn_eyes,geometry = balanced_iris_poses(cleaned,surface,eyes,pixels,mouth_core,slug)
+        open_art = drawn_eyes['eyes_open']
+        happy_eye = adult_lids(eyes,geometry,False)
+    elif source_closed:
         open_art = drawn_eyes['eyes_open']
         happy_eye = None
     else:
@@ -331,7 +389,7 @@ def prepare_expression_layers(cleaned, face, target, identity, redrawn=False):
         drawn_eyes['eyes_lid_low'] = combine_inks(source_eyelid(cleaned,e,.25) for e in eyes)
         drawn_eyes['eyes_glance'] = drawn_eyes['eyes_lid_mid']
         happy_eye = face_strokes(eyes)
-    if redrawn:
+    if redrawn and not geometry:
         for eye in eyes:
             left,top,right,bottom = eye['box']
             geometry.append(((left+right)/2,(top+bottom)/2,(right-left)*.75,(bottom-top)*.83,0.))
@@ -380,7 +438,6 @@ def prepare_expression_layers(cleaned, face, target, identity, redrawn=False):
             if art is not None:
                 face_coverage[slot] |= np.asarray(art.getchannel('A')) > 3
 
-    surface = heal_surface(pixels,eye_support,mouth_support,identity,eyes,profile)
     bounds = {}
 
     def save(name, image, box):

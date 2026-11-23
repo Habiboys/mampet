@@ -47,7 +47,7 @@
       "manifest": "fire_dragon/adult/animation_manifest.json",
       "eyes_attachment": true,
       "mouth_attachment": true,
-      "expression_revision": 6,
+      "expression_revision": 7,
       "eyes_redrawn_open": true
     },
     {
@@ -537,7 +537,7 @@
       "manifest": "moss_golem/adult/animation_manifest.json",
       "eyes_attachment": true,
       "mouth_attachment": true,
-      "expression_revision": 6,
+      "expression_revision": 7,
       "eyes_redrawn_open": true
     },
     {
@@ -582,7 +582,7 @@
       "manifest": "dessert_ghost/adult/animation_manifest.json",
       "eyes_attachment": true,
       "mouth_attachment": true,
-      "expression_revision": 6,
+      "expression_revision": 7,
       "eyes_redrawn_open": true
     },
     {
@@ -627,7 +627,7 @@
       "manifest": "bee_moth/adult/animation_manifest.json",
       "eyes_attachment": true,
       "mouth_attachment": true,
-      "expression_revision": 6,
+      "expression_revision": 7,
       "eyes_redrawn_open": true
     },
     {
@@ -672,7 +672,7 @@
       "manifest": "ice_fox/adult/animation_manifest.json",
       "eyes_attachment": true,
       "mouth_attachment": true,
-      "expression_revision": 6,
+      "expression_revision": 7,
       "eyes_redrawn_open": true
     },
     {
@@ -717,7 +717,7 @@
       "manifest": "forest_deer/adult/animation_manifest.json",
       "eyes_attachment": true,
       "mouth_attachment": true,
-      "expression_revision": 6,
+      "expression_revision": 7,
       "eyes_redrawn_open": true
     },
     {
@@ -762,7 +762,7 @@
       "manifest": "chef_penguin/adult/animation_manifest.json",
       "eyes_attachment": true,
       "mouth_attachment": true,
-      "expression_revision": 6,
+      "expression_revision": 7,
       "eyes_redrawn_open": true
     },
     {
@@ -807,7 +807,7 @@
       "manifest": "mage_cat/adult/animation_manifest.json",
       "eyes_attachment": true,
       "mouth_attachment": true,
-      "expression_revision": 6,
+      "expression_revision": 7,
       "eyes_redrawn_open": true
     },
     {
@@ -852,7 +852,7 @@
       "manifest": "mushroom/adult/animation_manifest.json",
       "eyes_attachment": true,
       "mouth_attachment": true,
-      "expression_revision": 6,
+      "expression_revision": 7,
       "eyes_redrawn_open": true
     },
     {
@@ -897,7 +897,7 @@
       "manifest": "bamboo_panda/adult/animation_manifest.json",
       "eyes_attachment": true,
       "mouth_attachment": true,
-      "expression_revision": 6,
+      "expression_revision": 7,
       "eyes_redrawn_open": true
     }
   ]
