@@ -1,0 +1,5 @@
+# Salin file ini menjadi `android/local.properties` (file lokal, tidak di-commit ke Git)
+# lalu isi path SDK lokal serta Google Maps Android SDK API Key Anda.
+flutter.sdk=/path/to/flutter
+sdk.dir=/path/to/Android/Sdk
+MAPS_API_KEY=YOUR_GOOGLE_MAPS_ANDROID_API_KEY

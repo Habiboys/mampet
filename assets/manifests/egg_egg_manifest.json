@@ -1,0 +1,81 @@
+{
+  "version": "1.0",
+  "sprite_size": [
+    1024,
+    1024
+  ],
+  "states": [
+    "intact",
+    "cracked"
+  ],
+  "elements": [
+    "fire",
+    "water",
+    "nature",
+    "wind",
+    "earth",
+    "mystery"
+  ],
+  "assets": [
+    {
+      "element": "fire",
+      "state": "intact",
+      "path": "assets/eggs/01_fire_intact.png"
+    },
+    {
+      "element": "water",
+      "state": "intact",
+      "path": "assets/eggs/02_water_intact.png"
+    },
+    {
+      "element": "nature",
+      "state": "intact",
+      "path": "assets/eggs/03_nature_intact.png"
+    },
+    {
+      "element": "wind",
+      "state": "intact",
+      "path": "assets/eggs/04_wind_intact.png"
+    },
+    {
+      "element": "earth",
+      "state": "intact",
+      "path": "assets/eggs/05_earth_intact.png"
+    },
+    {
+      "element": "mystery",
+      "state": "intact",
+      "path": "assets/eggs/06_mystery_intact.png"
+    },
+    {
+      "element": "fire",
+      "state": "cracked",
+      "path": "assets/eggs/01_fire_cracked.png"
+    },
+    {
+      "element": "water",
+      "state": "cracked",
+      "path": "assets/eggs/02_water_cracked.png"
+    },
+    {
+      "element": "nature",
+      "state": "cracked",
+      "path": "assets/eggs/03_nature_cracked.png"
+    },
+    {
+      "element": "wind",
+      "state": "cracked",
+      "path": "assets/eggs/04_wind_cracked.png"
+    },
+    {
+      "element": "earth",
+      "state": "cracked",
+      "path": "assets/eggs/05_earth_cracked.png"
+    },
+    {
+      "element": "mystery",
+      "state": "cracked",
+      "path": "assets/eggs/06_mystery_cracked.png"
+    }
+  ]
+}

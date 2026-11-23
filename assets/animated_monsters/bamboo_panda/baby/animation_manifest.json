@@ -1,0 +1,191 @@
+{
+  "monster_id": "20",
+  "monster_slug": "bamboo_panda",
+  "monster_name": "Bambalu",
+  "stage": "baby",
+  "element": "nature",
+  "rarity": "common",
+  "source_asset": "assets/monsters/bamboo_panda/baby.png",
+  "schema_version": 1,
+  "artboard_px": [
+    1024,
+    1024
+  ],
+  "source_master": "source/original.png",
+  "source_sha256": "d97728f36029ae1e6d1af09a1750058323b7bfd1bf9b0abc61441b45c170d6a6",
+  "path_base": "directory of animation_manifest.json",
+  "tool": {
+    "name": "OpenBone MCP",
+    "version": "0.4.8"
+  },
+  "editable_rig": "rig/character.obone",
+  "exports": [
+    {
+      "path": "exports/character.obonb",
+      "format": "obonb",
+      "bytes": 404317,
+      "sha256": "cdd3c0ee4312ee5718448c60a2ee5551c5fbdc2721a3999c04c3e0f7717d004d",
+      "embedded_atlas": true,
+      "atlas_resolution_scale": 0.5
+    }
+  ],
+  "state_machine": {
+    "name": "BambaluBaby",
+    "entry": "idle",
+    "wake_trigger": "wake",
+    "head_click_trigger": "pet",
+    "return_state": "idle",
+    "layer": "Motion"
+  },
+  "animations": [
+    "idle",
+    "happy",
+    "pet",
+    "eat",
+    "sleep",
+    "play",
+    "special"
+  ],
+  "clips": {
+    "idle": {
+      "file": "exports/character.obonb",
+      "format": "obonb",
+      "animation": "idle",
+      "state": "idle",
+      "trigger": null,
+      "duration_seconds": 3.2,
+      "loop": true,
+      "preview": "previews/idle.gif",
+      "preview_fps": 20
+    },
+    "happy": {
+      "file": "exports/character.obonb",
+      "format": "obonb",
+      "animation": "happy",
+      "state": "happy",
+      "trigger": "happy",
+      "duration_seconds": 1.4,
+      "loop": false,
+      "preview": "previews/happy.gif",
+      "preview_fps": 20
+    },
+    "pet": {
+      "file": "exports/character.obonb",
+      "format": "obonb",
+      "animation": "pet",
+      "state": "pet",
+      "trigger": "pet",
+      "duration_seconds": 1,
+      "loop": false,
+      "preview": "previews/pet.gif",
+      "preview_fps": 20
+    },
+    "eat": {
+      "file": "exports/character.obonb",
+      "format": "obonb",
+      "animation": "eat",
+      "state": "eat",
+      "trigger": "eat",
+      "duration_seconds": 1.8,
+      "loop": false,
+      "preview": "previews/eat.gif",
+      "preview_fps": 20
+    },
+    "sleep": {
+      "file": "exports/character.obonb",
+      "format": "obonb",
+      "animation": "sleep",
+      "state": "sleep",
+      "trigger": "sleep",
+      "duration_seconds": 3.6,
+      "loop": true,
+      "preview": "previews/sleep.gif",
+      "preview_fps": 20
+    },
+    "play": {
+      "file": "exports/character.obonb",
+      "format": "obonb",
+      "animation": "play",
+      "state": "play",
+      "trigger": "play",
+      "duration_seconds": 2,
+      "loop": false,
+      "preview": "previews/play.gif",
+      "preview_fps": 20
+    },
+    "special": {
+      "file": "exports/character.obonb",
+      "format": "obonb",
+      "animation": "special",
+      "state": "special",
+      "trigger": "special",
+      "duration_seconds": 1.8,
+      "loop": false,
+      "preview": "previews/special.gif",
+      "preview_fps": 20
+    }
+  },
+  "surface": {
+    "attachment": "character_surface",
+    "bones": [
+      "arm_left",
+      "arm_right",
+      "sprout"
+    ],
+    "layers": [
+      "layers/character_surface.png",
+      "layers/eyes_open.png",
+      "layers/eyes_original.png",
+      "layers/eyes_lid_mid.png",
+      "layers/eyes_lid_low.png",
+      "layers/eyes_joy.png",
+      "layers/eyes_closed.png",
+      "layers/eyes_sleep.png",
+      "layers/eyes_glance.png",
+      "layers/mouth_original.png",
+      "layers/mouth_relaxed.png",
+      "layers/mouth_open.png",
+      "layers/mouth_parted.png",
+      "layers/mouth_chew.png"
+    ],
+    "source_repairs": [],
+    "eyes_attachment": true,
+    "mouth_attachment": true
+  },
+  "quality": {
+    "metrics": {
+      "silhouette_iou_percent": 99.941,
+      "outside_face_rgb_mean_absolute_error_0_255": 1.105,
+      "matching_loop_endpoints": {
+        "idle": true,
+        "sleep": true
+      }
+    },
+    "mcp_validation": "No issues found.",
+    "state_simulation": "passed",
+    "range_multiplier": 1.0,
+    "samples_60_hz": 895,
+    "triangle_inversions_60_hz": 0,
+    "mesh_triangles": 720,
+    "mesh_vertices": 406,
+    "clipped_pose": false,
+    "neutral_preview": "previews/neutral.png",
+    "contact_sheet": "previews/contact_sheet.jpg",
+    "comparison": "previews/original_vs_reconstruction.jpg"
+  },
+  "runtime_compatibility": {
+    "android_device_verified": false,
+    "local_playback": "self-contained OpenBone OBONB",
+    "requires": "OpenBone weighted meshes, slots and state machines."
+  },
+  "expression_revision": {
+    "version": 2,
+    "eyes_redrawn_open": true,
+    "visible_eyes": 2,
+    "mouth_cavity_redrawn": false,
+    "beak_preserved": false,
+    "preview": "previews/face_expressions.jpg",
+    "default_eyes": "eyes_open",
+    "default_mouth": "mouth_relaxed"
+  }
+}

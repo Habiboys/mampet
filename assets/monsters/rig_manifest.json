@@ -1,0 +1,1065 @@
+{
+  "version": "1.0.0",
+  "total_characters": 60,
+  "summary": {
+    "full_layered": 26,
+    "whole_body": 32,
+    "needs_manual_art": 2
+  },
+  "characters": [
+    {
+      "species_id": "01",
+      "monster_id": "fire_dragon",
+      "stage": "baby",
+      "rig_tier": "full_layered",
+      "archetype": "winged_dragon",
+      "layer_count": 11,
+      "layers": [
+        "tail",
+        "wing_left",
+        "wing_right",
+        "body",
+        "head",
+        "eyes_open",
+        "eyes_closed",
+        "eyes_sleep",
+        "mouth_happy",
+        "mouth_neutral",
+        "mouth_eating"
+      ],
+      "rig_path": "assets/monsters/fire_dragon/baby/rig.json",
+      "animations_path": "assets/monsters/fire_dragon/baby/animations.json",
+      "notes": "Reference benchmark full layered rig (11 layers, visually QA-verified)."
+    },
+    {
+      "species_id": "01",
+      "monster_id": "fire_dragon",
+      "stage": "young",
+      "rig_tier": "full_layered",
+      "archetype": "winged_dragon",
+      "layer_count": 11,
+      "layers": [
+        "tail",
+        "wing_left",
+        "wing_right",
+        "body",
+        "head",
+        "eyes_open",
+        "eyes_closed",
+        "eyes_sleep",
+        "mouth_happy",
+        "mouth_neutral",
+        "mouth_eating"
+      ],
+      "rig_path": "assets/monsters/fire_dragon/young/rig.json",
+      "animations_path": "assets/monsters/fire_dragon/young/animations.json",
+      "notes": "Calibrated multi-part layered rig with root extensions & 6 facial expression layers. Cleaned trapped PNG checkerboard inside wing-neck loop."
+    },
+    {
+      "species_id": "01",
+      "monster_id": "fire_dragon",
+      "stage": "adult",
+      "rig_tier": "full_layered",
+      "archetype": "winged_dragon",
+      "layer_count": 11,
+      "layers": [
+        "tail",
+        "wing_left",
+        "wing_right",
+        "body",
+        "head",
+        "eyes_open",
+        "eyes_closed",
+        "eyes_sleep",
+        "mouth_happy",
+        "mouth_neutral",
+        "mouth_eating"
+      ],
+      "rig_path": "assets/monsters/fire_dragon/adult/rig.json",
+      "animations_path": "assets/monsters/fire_dragon/adult/animations.json",
+      "notes": "Calibrated multi-part layered rig with root extensions & 6 facial expression layers."
+    },
+    {
+      "species_id": "02",
+      "monster_id": "leaf_gorilla",
+      "stage": "baby",
+      "rig_tier": "full_layered",
+      "archetype": "biped_gorilla",
+      "layer_count": 9,
+      "layers": [
+        "body",
+        "head",
+        "eyes_open",
+        "eyes_closed",
+        "eyes_sleep",
+        "mouth_happy",
+        "mouth_neutral",
+        "mouth_eating",
+        "leaf"
+      ],
+      "rig_path": "assets/monsters/leaf_gorilla/baby/rig.json",
+      "animations_path": "assets/monsters/leaf_gorilla/baby/animations.json",
+      "notes": "Calibrated multi-part layered rig with root extensions & 6 facial expression layers."
+    },
+    {
+      "species_id": "02",
+      "monster_id": "leaf_gorilla",
+      "stage": "young",
+      "rig_tier": "whole_body",
+      "archetype": "biped_gorilla",
+      "layer_count": 1,
+      "layers": [
+        "body"
+      ],
+      "rig_path": "assets/monsters/leaf_gorilla/young/rig.json",
+      "animations_path": "assets/monsters/leaf_gorilla/young/animations.json",
+      "notes": "Honest whole-body elastic rig: leaf_gorilla/young has overlapping dense young details (foliage/flames/accessories/limbs) that require manual artist separation & background inpainting before upgrading to full_layered."
+    },
+    {
+      "species_id": "02",
+      "monster_id": "leaf_gorilla",
+      "stage": "adult",
+      "rig_tier": "whole_body",
+      "archetype": "biped_gorilla",
+      "layer_count": 1,
+      "layers": [
+        "body"
+      ],
+      "rig_path": "assets/monsters/leaf_gorilla/adult/rig.json",
+      "animations_path": "assets/monsters/leaf_gorilla/adult/animations.json",
+      "notes": "Honest whole-body elastic rig: leaf_gorilla/adult has overlapping dense adult details (foliage/flames/accessories/limbs) that require manual artist separation & background inpainting before upgrading to full_layered."
+    },
+    {
+      "species_id": "03",
+      "monster_id": "sky_bird",
+      "stage": "baby",
+      "rig_tier": "full_layered",
+      "archetype": "winged_bird",
+      "layer_count": 10,
+      "layers": [
+        "wing_right",
+        "body",
+        "wing_left",
+        "crest",
+        "eyes_open",
+        "eyes_closed",
+        "eyes_sleep",
+        "mouth_happy",
+        "mouth_neutral",
+        "mouth_eating"
+      ],
+      "rig_path": "assets/monsters/sky_bird/baby/rig.json",
+      "animations_path": "assets/monsters/sky_bird/baby/animations.json",
+      "notes": "Calibrated multi-part layered rig with root extensions & 6 facial expression layers."
+    },
+    {
+      "species_id": "03",
+      "monster_id": "sky_bird",
+      "stage": "young",
+      "rig_tier": "whole_body",
+      "archetype": "winged_bird",
+      "layer_count": 1,
+      "layers": [
+        "body"
+      ],
+      "rig_path": "assets/monsters/sky_bird/young/rig.json",
+      "animations_path": "assets/monsters/sky_bird/young/animations.json",
+      "notes": "Honest whole-body elastic rig: sky_bird/young has overlapping dense young details (foliage/flames/accessories/limbs) that require manual artist separation & background inpainting before upgrading to full_layered."
+    },
+    {
+      "species_id": "03",
+      "monster_id": "sky_bird",
+      "stage": "adult",
+      "rig_tier": "whole_body",
+      "archetype": "winged_bird",
+      "layer_count": 1,
+      "layers": [
+        "body"
+      ],
+      "rig_path": "assets/monsters/sky_bird/adult/rig.json",
+      "animations_path": "assets/monsters/sky_bird/adult/animations.json",
+      "notes": "Honest whole-body elastic rig: sky_bird/adult has overlapping dense adult details (foliage/flames/accessories/limbs) that require manual artist separation & background inpainting before upgrading to full_layered."
+    },
+    {
+      "species_id": "04",
+      "monster_id": "fox",
+      "stage": "baby",
+      "rig_tier": "full_layered",
+      "archetype": "tailed_fox",
+      "layer_count": 9,
+      "layers": [
+        "tail",
+        "body",
+        "head",
+        "eyes_open",
+        "eyes_closed",
+        "eyes_sleep",
+        "mouth_happy",
+        "mouth_neutral",
+        "mouth_eating"
+      ],
+      "rig_path": "assets/monsters/fox/baby/rig.json",
+      "animations_path": "assets/monsters/fox/baby/animations.json",
+      "notes": "Calibrated multi-part layered rig with root extensions & 6 facial expression layers."
+    },
+    {
+      "species_id": "04",
+      "monster_id": "fox",
+      "stage": "young",
+      "rig_tier": "full_layered",
+      "archetype": "tailed_fox",
+      "layer_count": 9,
+      "layers": [
+        "tail",
+        "body",
+        "head",
+        "eyes_open",
+        "eyes_closed",
+        "eyes_sleep",
+        "mouth_happy",
+        "mouth_neutral",
+        "mouth_eating"
+      ],
+      "rig_path": "assets/monsters/fox/young/rig.json",
+      "animations_path": "assets/monsters/fox/young/animations.json",
+      "notes": "Calibrated multi-part layered rig with root extensions & 6 facial expression layers. Cleaned stray left-edge artifact & trapped checkerboard inside tail-neck loop."
+    },
+    {
+      "species_id": "04",
+      "monster_id": "fox",
+      "stage": "adult",
+      "rig_tier": "whole_body",
+      "archetype": "tailed_fox",
+      "layer_count": 1,
+      "layers": [
+        "body"
+      ],
+      "rig_path": "assets/monsters/fox/adult/rig.json",
+      "animations_path": "assets/monsters/fox/adult/animations.json",
+      "notes": "Honest whole-body elastic rig: fox/adult has overlapping dense adult details (foliage/flames/accessories/limbs) that require manual artist separation & background inpainting before upgrading to full_layered."
+    },
+    {
+      "species_id": "05",
+      "monster_id": "water_slime",
+      "stage": "baby",
+      "rig_tier": "full_layered",
+      "archetype": "elastic_slime",
+      "layer_count": 8,
+      "layers": [
+        "body",
+        "droplets",
+        "eyes_open",
+        "eyes_closed",
+        "eyes_sleep",
+        "mouth_happy",
+        "mouth_neutral",
+        "mouth_eating"
+      ],
+      "rig_path": "assets/monsters/water_slime/baby/rig.json",
+      "animations_path": "assets/monsters/water_slime/baby/animations.json",
+      "notes": "Calibrated multi-part layered rig with root extensions & 6 facial expression layers."
+    },
+    {
+      "species_id": "05",
+      "monster_id": "water_slime",
+      "stage": "young",
+      "rig_tier": "full_layered",
+      "archetype": "elastic_slime",
+      "layer_count": 8,
+      "layers": [
+        "body",
+        "droplets",
+        "eyes_open",
+        "eyes_closed",
+        "eyes_sleep",
+        "mouth_happy",
+        "mouth_neutral",
+        "mouth_eating"
+      ],
+      "rig_path": "assets/monsters/water_slime/young/rig.json",
+      "animations_path": "assets/monsters/water_slime/young/animations.json",
+      "notes": "Calibrated multi-part layered rig with root extensions & 6 facial expression layers."
+    },
+    {
+      "species_id": "05",
+      "monster_id": "water_slime",
+      "stage": "adult",
+      "rig_tier": "whole_body",
+      "archetype": "elastic_slime",
+      "layer_count": 1,
+      "layers": [
+        "body"
+      ],
+      "rig_path": "assets/monsters/water_slime/adult/rig.json",
+      "animations_path": "assets/monsters/water_slime/adult/animations.json",
+      "notes": "Honest whole-body elastic rig: water_slime/adult has overlapping dense adult details (foliage/flames/accessories/limbs) that require manual artist separation & background inpainting before upgrading to full_layered."
+    },
+    {
+      "species_id": "06",
+      "monster_id": "leaf_spirit",
+      "stage": "baby",
+      "rig_tier": "full_layered",
+      "archetype": "plant_sprout",
+      "layer_count": 9,
+      "layers": [
+        "body",
+        "leaf_left",
+        "leaf_right",
+        "eyes_open",
+        "eyes_closed",
+        "eyes_sleep",
+        "mouth_happy",
+        "mouth_neutral",
+        "mouth_eating"
+      ],
+      "rig_path": "assets/monsters/leaf_spirit/baby/rig.json",
+      "animations_path": "assets/monsters/leaf_spirit/baby/animations.json",
+      "notes": "Calibrated multi-part layered rig with root extensions & 6 facial expression layers."
+    },
+    {
+      "species_id": "06",
+      "monster_id": "leaf_spirit",
+      "stage": "young",
+      "rig_tier": "needs_manual_art",
+      "archetype": "plant_sprout",
+      "layer_count": 0,
+      "layers": [],
+      "rig_path": "assets/monsters/leaf_spirit/young/rig.json",
+      "animations_path": "assets/monsters/leaf_spirit/young/animations.json",
+      "notes": "SOURCE DEFECT: assets/monsters/leaf_spirit/young.png in master ZIP is blank (only 0.8% faint pixels). Requires original Leaf Spirit Young illustration by 2D artist."
+    },
+    {
+      "species_id": "06",
+      "monster_id": "leaf_spirit",
+      "stage": "adult",
+      "rig_tier": "needs_manual_art",
+      "archetype": "plant_sprout",
+      "layer_count": 0,
+      "layers": [],
+      "rig_path": "assets/monsters/leaf_spirit/adult/rig.json",
+      "animations_path": "assets/monsters/leaf_spirit/adult/animations.json",
+      "notes": "SOURCE DEFECT: assets/monsters/leaf_spirit/adult.png in master ZIP is a visual duplicate of forest_deer/adult.png. Requires original Leaf Spirit Adult illustration by 2D artist."
+    },
+    {
+      "species_id": "07",
+      "monster_id": "pink_axolotl",
+      "stage": "baby",
+      "rig_tier": "full_layered",
+      "archetype": "aquatic_axolotl",
+      "layer_count": 11,
+      "layers": [
+        "tail",
+        "body",
+        "gills_left",
+        "gills_right",
+        "head",
+        "eyes_open",
+        "eyes_closed",
+        "eyes_sleep",
+        "mouth_happy",
+        "mouth_neutral",
+        "mouth_eating"
+      ],
+      "rig_path": "assets/monsters/pink_axolotl/baby/rig.json",
+      "animations_path": "assets/monsters/pink_axolotl/baby/animations.json",
+      "notes": "Calibrated multi-part layered rig with root extensions & 6 facial expression layers."
+    },
+    {
+      "species_id": "07",
+      "monster_id": "pink_axolotl",
+      "stage": "young",
+      "rig_tier": "full_layered",
+      "archetype": "aquatic_axolotl",
+      "layer_count": 11,
+      "layers": [
+        "tail",
+        "body",
+        "gills_left",
+        "gills_right",
+        "head",
+        "eyes_open",
+        "eyes_closed",
+        "eyes_sleep",
+        "mouth_happy",
+        "mouth_neutral",
+        "mouth_eating"
+      ],
+      "rig_path": "assets/monsters/pink_axolotl/young/rig.json",
+      "animations_path": "assets/monsters/pink_axolotl/young/animations.json",
+      "notes": "Calibrated multi-part layered rig with root extensions & 6 facial expression layers."
+    },
+    {
+      "species_id": "07",
+      "monster_id": "pink_axolotl",
+      "stage": "adult",
+      "rig_tier": "whole_body",
+      "archetype": "aquatic_axolotl",
+      "layer_count": 1,
+      "layers": [
+        "body"
+      ],
+      "rig_path": "assets/monsters/pink_axolotl/adult/rig.json",
+      "animations_path": "assets/monsters/pink_axolotl/adult/animations.json",
+      "notes": "Honest whole-body elastic rig: pink_axolotl/adult has overlapping dense adult details (foliage/flames/accessories/limbs) that require manual artist separation & background inpainting before upgrading to full_layered."
+    },
+    {
+      "species_id": "08",
+      "monster_id": "dessert_panda",
+      "stage": "baby",
+      "rig_tier": "full_layered",
+      "archetype": "biped_bear",
+      "layer_count": 9,
+      "layers": [
+        "body",
+        "head",
+        "eyes_open",
+        "eyes_closed",
+        "eyes_sleep",
+        "mouth_happy",
+        "mouth_neutral",
+        "mouth_eating",
+        "cherry"
+      ],
+      "rig_path": "assets/monsters/dessert_panda/baby/rig.json",
+      "animations_path": "assets/monsters/dessert_panda/baby/animations.json",
+      "notes": "Calibrated multi-part layered rig with root extensions & 6 facial expression layers."
+    },
+    {
+      "species_id": "08",
+      "monster_id": "dessert_panda",
+      "stage": "young",
+      "rig_tier": "whole_body",
+      "archetype": "biped_bear",
+      "layer_count": 1,
+      "layers": [
+        "body"
+      ],
+      "rig_path": "assets/monsters/dessert_panda/young/rig.json",
+      "animations_path": "assets/monsters/dessert_panda/young/animations.json",
+      "notes": "Honest whole-body elastic rig: dessert_panda/young has overlapping dense young details (foliage/flames/accessories/limbs) that require manual artist separation & background inpainting before upgrading to full_layered."
+    },
+    {
+      "species_id": "08",
+      "monster_id": "dessert_panda",
+      "stage": "adult",
+      "rig_tier": "whole_body",
+      "archetype": "biped_bear",
+      "layer_count": 1,
+      "layers": [
+        "body"
+      ],
+      "rig_path": "assets/monsters/dessert_panda/adult/rig.json",
+      "animations_path": "assets/monsters/dessert_panda/adult/animations.json",
+      "notes": "Honest whole-body elastic rig: dessert_panda/adult has overlapping dense adult details (foliage/flames/accessories/limbs) that require manual artist separation & background inpainting before upgrading to full_layered."
+    },
+    {
+      "species_id": "09",
+      "monster_id": "lamb",
+      "stage": "baby",
+      "rig_tier": "full_layered",
+      "archetype": "quadruped_lamb",
+      "layer_count": 11,
+      "layers": [
+        "tail",
+        "body",
+        "ear_left",
+        "ear_right",
+        "head",
+        "eyes_open",
+        "eyes_closed",
+        "eyes_sleep",
+        "mouth_happy",
+        "mouth_neutral",
+        "mouth_eating"
+      ],
+      "rig_path": "assets/monsters/lamb/baby/rig.json",
+      "animations_path": "assets/monsters/lamb/baby/animations.json",
+      "notes": "Calibrated multi-part layered rig with root extensions & 6 facial expression layers."
+    },
+    {
+      "species_id": "09",
+      "monster_id": "lamb",
+      "stage": "young",
+      "rig_tier": "whole_body",
+      "archetype": "quadruped_lamb",
+      "layer_count": 1,
+      "layers": [
+        "body"
+      ],
+      "rig_path": "assets/monsters/lamb/young/rig.json",
+      "animations_path": "assets/monsters/lamb/young/animations.json",
+      "notes": "Honest whole-body elastic rig: lamb/young has overlapping dense young details (foliage/flames/accessories/limbs) that require manual artist separation & background inpainting before upgrading to full_layered."
+    },
+    {
+      "species_id": "09",
+      "monster_id": "lamb",
+      "stage": "adult",
+      "rig_tier": "whole_body",
+      "archetype": "quadruped_lamb",
+      "layer_count": 1,
+      "layers": [
+        "body"
+      ],
+      "rig_path": "assets/monsters/lamb/adult/rig.json",
+      "animations_path": "assets/monsters/lamb/adult/animations.json",
+      "notes": "Honest whole-body elastic rig: lamb/adult has overlapping dense adult details (foliage/flames/accessories/limbs) that require manual artist separation & background inpainting before upgrading to full_layered."
+    },
+    {
+      "species_id": "10",
+      "monster_id": "bread_turtle",
+      "stage": "baby",
+      "rig_tier": "full_layered",
+      "archetype": "shelled_turtle",
+      "layer_count": 9,
+      "layers": [
+        "body",
+        "shell",
+        "head",
+        "eyes_open",
+        "eyes_closed",
+        "eyes_sleep",
+        "mouth_happy",
+        "mouth_neutral",
+        "mouth_eating"
+      ],
+      "rig_path": "assets/monsters/bread_turtle/baby/rig.json",
+      "animations_path": "assets/monsters/bread_turtle/baby/animations.json",
+      "notes": "Calibrated multi-part layered rig with root extensions & 6 facial expression layers."
+    },
+    {
+      "species_id": "10",
+      "monster_id": "bread_turtle",
+      "stage": "young",
+      "rig_tier": "whole_body",
+      "archetype": "shelled_turtle",
+      "layer_count": 1,
+      "layers": [
+        "body"
+      ],
+      "rig_path": "assets/monsters/bread_turtle/young/rig.json",
+      "animations_path": "assets/monsters/bread_turtle/young/animations.json",
+      "notes": "Honest whole-body elastic rig: bread_turtle/young has overlapping dense young details (foliage/flames/accessories/limbs) that require manual artist separation & background inpainting before upgrading to full_layered."
+    },
+    {
+      "species_id": "10",
+      "monster_id": "bread_turtle",
+      "stage": "adult",
+      "rig_tier": "whole_body",
+      "archetype": "shelled_turtle",
+      "layer_count": 1,
+      "layers": [
+        "body"
+      ],
+      "rig_path": "assets/monsters/bread_turtle/adult/rig.json",
+      "animations_path": "assets/monsters/bread_turtle/adult/animations.json",
+      "notes": "Honest whole-body elastic rig: bread_turtle/adult has overlapping dense adult details (foliage/flames/accessories/limbs) that require manual artist separation & background inpainting before upgrading to full_layered."
+    },
+    {
+      "species_id": "11",
+      "monster_id": "sea_dragon",
+      "stage": "baby",
+      "rig_tier": "full_layered",
+      "archetype": "aquatic_dragon",
+      "layer_count": 11,
+      "layers": [
+        "tail",
+        "body",
+        "fin_left",
+        "fin_right",
+        "head",
+        "eyes_open",
+        "eyes_closed",
+        "eyes_sleep",
+        "mouth_happy",
+        "mouth_neutral",
+        "mouth_eating"
+      ],
+      "rig_path": "assets/monsters/sea_dragon/baby/rig.json",
+      "animations_path": "assets/monsters/sea_dragon/baby/animations.json",
+      "notes": "Calibrated multi-part layered rig with root extensions & 6 facial expression layers."
+    },
+    {
+      "species_id": "11",
+      "monster_id": "sea_dragon",
+      "stage": "young",
+      "rig_tier": "whole_body",
+      "archetype": "aquatic_dragon",
+      "layer_count": 1,
+      "layers": [
+        "body"
+      ],
+      "rig_path": "assets/monsters/sea_dragon/young/rig.json",
+      "animations_path": "assets/monsters/sea_dragon/young/animations.json",
+      "notes": "Honest whole-body elastic rig: sea_dragon/young has overlapping dense young details (foliage/flames/accessories/limbs) that require manual artist separation & background inpainting before upgrading to full_layered."
+    },
+    {
+      "species_id": "11",
+      "monster_id": "sea_dragon",
+      "stage": "adult",
+      "rig_tier": "whole_body",
+      "archetype": "aquatic_dragon",
+      "layer_count": 1,
+      "layers": [
+        "body"
+      ],
+      "rig_path": "assets/monsters/sea_dragon/adult/rig.json",
+      "animations_path": "assets/monsters/sea_dragon/adult/animations.json",
+      "notes": "Honest whole-body elastic rig: sea_dragon/adult has overlapping dense adult details (foliage/flames/accessories/limbs) that require manual artist separation & background inpainting before upgrading to full_layered."
+    },
+    {
+      "species_id": "12",
+      "monster_id": "moss_golem",
+      "stage": "baby",
+      "rig_tier": "full_layered",
+      "archetype": "stone_golem",
+      "layer_count": 8,
+      "layers": [
+        "body",
+        "eyes_open",
+        "eyes_closed",
+        "eyes_sleep",
+        "mouth_happy",
+        "mouth_neutral",
+        "mouth_eating",
+        "sprout"
+      ],
+      "rig_path": "assets/monsters/moss_golem/baby/rig.json",
+      "animations_path": "assets/monsters/moss_golem/baby/animations.json",
+      "notes": "Calibrated multi-part layered rig with root extensions & 6 facial expression layers."
+    },
+    {
+      "species_id": "12",
+      "monster_id": "moss_golem",
+      "stage": "young",
+      "rig_tier": "whole_body",
+      "archetype": "stone_golem",
+      "layer_count": 1,
+      "layers": [
+        "body"
+      ],
+      "rig_path": "assets/monsters/moss_golem/young/rig.json",
+      "animations_path": "assets/monsters/moss_golem/young/animations.json",
+      "notes": "Honest whole-body elastic rig: moss_golem/young has overlapping dense young details (foliage/flames/accessories/limbs) that require manual artist separation & background inpainting before upgrading to full_layered."
+    },
+    {
+      "species_id": "12",
+      "monster_id": "moss_golem",
+      "stage": "adult",
+      "rig_tier": "whole_body",
+      "archetype": "stone_golem",
+      "layer_count": 1,
+      "layers": [
+        "body"
+      ],
+      "rig_path": "assets/monsters/moss_golem/adult/rig.json",
+      "animations_path": "assets/monsters/moss_golem/adult/animations.json",
+      "notes": "Honest whole-body elastic rig: moss_golem/adult has overlapping dense adult details (foliage/flames/accessories/limbs) that require manual artist separation & background inpainting before upgrading to full_layered."
+    },
+    {
+      "species_id": "13",
+      "monster_id": "dessert_ghost",
+      "stage": "baby",
+      "rig_tier": "full_layered",
+      "archetype": "floating_ghost",
+      "layer_count": 8,
+      "layers": [
+        "body",
+        "eyes_open",
+        "eyes_closed",
+        "eyes_sleep",
+        "mouth_happy",
+        "mouth_neutral",
+        "mouth_eating",
+        "crown"
+      ],
+      "rig_path": "assets/monsters/dessert_ghost/baby/rig.json",
+      "animations_path": "assets/monsters/dessert_ghost/baby/animations.json",
+      "notes": "Calibrated multi-part layered rig with root extensions & 6 facial expression layers."
+    },
+    {
+      "species_id": "13",
+      "monster_id": "dessert_ghost",
+      "stage": "young",
+      "rig_tier": "whole_body",
+      "archetype": "floating_ghost",
+      "layer_count": 1,
+      "layers": [
+        "body"
+      ],
+      "rig_path": "assets/monsters/dessert_ghost/young/rig.json",
+      "animations_path": "assets/monsters/dessert_ghost/young/animations.json",
+      "notes": "Honest whole-body elastic rig: dessert_ghost/young has overlapping dense young details (foliage/flames/accessories/limbs) that require manual artist separation & background inpainting before upgrading to full_layered."
+    },
+    {
+      "species_id": "13",
+      "monster_id": "dessert_ghost",
+      "stage": "adult",
+      "rig_tier": "whole_body",
+      "archetype": "floating_ghost",
+      "layer_count": 1,
+      "layers": [
+        "body"
+      ],
+      "rig_path": "assets/monsters/dessert_ghost/adult/rig.json",
+      "animations_path": "assets/monsters/dessert_ghost/adult/animations.json",
+      "notes": "Honest whole-body elastic rig: dessert_ghost/adult has overlapping dense adult details (foliage/flames/accessories/limbs) that require manual artist separation & background inpainting before upgrading to full_layered."
+    },
+    {
+      "species_id": "14",
+      "monster_id": "bee_moth",
+      "stage": "baby",
+      "rig_tier": "full_layered",
+      "archetype": "winged_insect",
+      "layer_count": 10,
+      "layers": [
+        "wing_left",
+        "wing_right",
+        "antennae",
+        "body",
+        "eyes_open",
+        "eyes_closed",
+        "eyes_sleep",
+        "mouth_happy",
+        "mouth_neutral",
+        "mouth_eating"
+      ],
+      "rig_path": "assets/monsters/bee_moth/baby/rig.json",
+      "animations_path": "assets/monsters/bee_moth/baby/animations.json",
+      "notes": "Calibrated multi-part layered rig with root extensions & 6 facial expression layers."
+    },
+    {
+      "species_id": "14",
+      "monster_id": "bee_moth",
+      "stage": "young",
+      "rig_tier": "whole_body",
+      "archetype": "winged_insect",
+      "layer_count": 1,
+      "layers": [
+        "body"
+      ],
+      "rig_path": "assets/monsters/bee_moth/young/rig.json",
+      "animations_path": "assets/monsters/bee_moth/young/animations.json",
+      "notes": "Honest whole-body elastic rig: bee_moth/young has overlapping dense young details (foliage/flames/accessories/limbs) that require manual artist separation & background inpainting before upgrading to full_layered."
+    },
+    {
+      "species_id": "14",
+      "monster_id": "bee_moth",
+      "stage": "adult",
+      "rig_tier": "whole_body",
+      "archetype": "winged_insect",
+      "layer_count": 1,
+      "layers": [
+        "body"
+      ],
+      "rig_path": "assets/monsters/bee_moth/adult/rig.json",
+      "animations_path": "assets/monsters/bee_moth/adult/animations.json",
+      "notes": "Honest whole-body elastic rig: bee_moth/adult has overlapping dense adult details (foliage/flames/accessories/limbs) that require manual artist separation & background inpainting before upgrading to full_layered."
+    },
+    {
+      "species_id": "15",
+      "monster_id": "ice_fox",
+      "stage": "baby",
+      "rig_tier": "full_layered",
+      "archetype": "tailed_fox",
+      "layer_count": 9,
+      "layers": [
+        "tail",
+        "body",
+        "head",
+        "eyes_open",
+        "eyes_closed",
+        "eyes_sleep",
+        "mouth_happy",
+        "mouth_neutral",
+        "mouth_eating"
+      ],
+      "rig_path": "assets/monsters/ice_fox/baby/rig.json",
+      "animations_path": "assets/monsters/ice_fox/baby/animations.json",
+      "notes": "Calibrated multi-part layered rig with root extensions & 6 facial expression layers."
+    },
+    {
+      "species_id": "15",
+      "monster_id": "ice_fox",
+      "stage": "young",
+      "rig_tier": "whole_body",
+      "archetype": "tailed_fox",
+      "layer_count": 1,
+      "layers": [
+        "body"
+      ],
+      "rig_path": "assets/monsters/ice_fox/young/rig.json",
+      "animations_path": "assets/monsters/ice_fox/young/animations.json",
+      "notes": "Honest whole-body elastic rig: ice_fox/young has overlapping dense young details (foliage/flames/accessories/limbs) that require manual artist separation & background inpainting before upgrading to full_layered."
+    },
+    {
+      "species_id": "15",
+      "monster_id": "ice_fox",
+      "stage": "adult",
+      "rig_tier": "whole_body",
+      "archetype": "tailed_fox",
+      "layer_count": 1,
+      "layers": [
+        "body"
+      ],
+      "rig_path": "assets/monsters/ice_fox/adult/rig.json",
+      "animations_path": "assets/monsters/ice_fox/adult/animations.json",
+      "notes": "Honest whole-body elastic rig: ice_fox/adult has overlapping dense adult details (foliage/flames/accessories/limbs) that require manual artist separation & background inpainting before upgrading to full_layered."
+    },
+    {
+      "species_id": "16",
+      "monster_id": "forest_deer",
+      "stage": "baby",
+      "rig_tier": "full_layered",
+      "archetype": "quadruped_deer",
+      "layer_count": 9,
+      "layers": [
+        "tail",
+        "body",
+        "head",
+        "eyes_open",
+        "eyes_closed",
+        "eyes_sleep",
+        "mouth_happy",
+        "mouth_neutral",
+        "mouth_eating"
+      ],
+      "rig_path": "assets/monsters/forest_deer/baby/rig.json",
+      "animations_path": "assets/monsters/forest_deer/baby/animations.json",
+      "notes": "Calibrated multi-part layered rig with root extensions & 6 facial expression layers."
+    },
+    {
+      "species_id": "16",
+      "monster_id": "forest_deer",
+      "stage": "young",
+      "rig_tier": "whole_body",
+      "archetype": "quadruped_deer",
+      "layer_count": 1,
+      "layers": [
+        "body"
+      ],
+      "rig_path": "assets/monsters/forest_deer/young/rig.json",
+      "animations_path": "assets/monsters/forest_deer/young/animations.json",
+      "notes": "Honest whole-body elastic rig: forest_deer/young has overlapping dense young details (foliage/flames/accessories/limbs) that require manual artist separation & background inpainting before upgrading to full_layered."
+    },
+    {
+      "species_id": "16",
+      "monster_id": "forest_deer",
+      "stage": "adult",
+      "rig_tier": "whole_body",
+      "archetype": "quadruped_deer",
+      "layer_count": 1,
+      "layers": [
+        "body"
+      ],
+      "rig_path": "assets/monsters/forest_deer/adult/rig.json",
+      "animations_path": "assets/monsters/forest_deer/adult/animations.json",
+      "notes": "Honest whole-body elastic rig: forest_deer/adult has overlapping dense adult details (foliage/flames/accessories/limbs) that require manual artist separation & background inpainting before upgrading to full_layered."
+    },
+    {
+      "species_id": "17",
+      "monster_id": "chef_penguin",
+      "stage": "baby",
+      "rig_tier": "full_layered",
+      "archetype": "biped_penguin",
+      "layer_count": 10,
+      "layers": [
+        "flipper_right",
+        "body",
+        "flipper_left",
+        "chef_hat",
+        "eyes_open",
+        "eyes_closed",
+        "eyes_sleep",
+        "mouth_happy",
+        "mouth_neutral",
+        "mouth_eating"
+      ],
+      "rig_path": "assets/monsters/chef_penguin/baby/rig.json",
+      "animations_path": "assets/monsters/chef_penguin/baby/animations.json",
+      "notes": "Calibrated multi-part layered rig with root extensions & 6 facial expression layers."
+    },
+    {
+      "species_id": "17",
+      "monster_id": "chef_penguin",
+      "stage": "young",
+      "rig_tier": "whole_body",
+      "archetype": "biped_penguin",
+      "layer_count": 1,
+      "layers": [
+        "body"
+      ],
+      "rig_path": "assets/monsters/chef_penguin/young/rig.json",
+      "animations_path": "assets/monsters/chef_penguin/young/animations.json",
+      "notes": "Honest whole-body elastic rig: chef_penguin/young has overlapping dense young details (foliage/flames/accessories/limbs) that require manual artist separation & background inpainting before upgrading to full_layered."
+    },
+    {
+      "species_id": "17",
+      "monster_id": "chef_penguin",
+      "stage": "adult",
+      "rig_tier": "whole_body",
+      "archetype": "biped_penguin",
+      "layer_count": 1,
+      "layers": [
+        "body"
+      ],
+      "rig_path": "assets/monsters/chef_penguin/adult/rig.json",
+      "animations_path": "assets/monsters/chef_penguin/adult/animations.json",
+      "notes": "Honest whole-body elastic rig: chef_penguin/adult has overlapping dense adult details (foliage/flames/accessories/limbs) that require manual artist separation & background inpainting before upgrading to full_layered."
+    },
+    {
+      "species_id": "18",
+      "monster_id": "mage_cat",
+      "stage": "baby",
+      "rig_tier": "full_layered",
+      "archetype": "tailed_cat",
+      "layer_count": 9,
+      "layers": [
+        "tail",
+        "body",
+        "head",
+        "eyes_open",
+        "eyes_closed",
+        "eyes_sleep",
+        "mouth_happy",
+        "mouth_neutral",
+        "mouth_eating"
+      ],
+      "rig_path": "assets/monsters/mage_cat/baby/rig.json",
+      "animations_path": "assets/monsters/mage_cat/baby/animations.json",
+      "notes": "Calibrated multi-part layered rig with root extensions & 6 facial expression layers."
+    },
+    {
+      "species_id": "18",
+      "monster_id": "mage_cat",
+      "stage": "young",
+      "rig_tier": "whole_body",
+      "archetype": "tailed_cat",
+      "layer_count": 1,
+      "layers": [
+        "body"
+      ],
+      "rig_path": "assets/monsters/mage_cat/young/rig.json",
+      "animations_path": "assets/monsters/mage_cat/young/animations.json",
+      "notes": "Honest whole-body elastic rig: mage_cat/young has overlapping dense young details (foliage/flames/accessories/limbs) that require manual artist separation & background inpainting before upgrading to full_layered."
+    },
+    {
+      "species_id": "18",
+      "monster_id": "mage_cat",
+      "stage": "adult",
+      "rig_tier": "whole_body",
+      "archetype": "tailed_cat",
+      "layer_count": 1,
+      "layers": [
+        "body"
+      ],
+      "rig_path": "assets/monsters/mage_cat/adult/rig.json",
+      "animations_path": "assets/monsters/mage_cat/adult/animations.json",
+      "notes": "Honest whole-body elastic rig: mage_cat/adult has overlapping dense adult details (foliage/flames/accessories/limbs) that require manual artist separation & background inpainting before upgrading to full_layered."
+    },
+    {
+      "species_id": "19",
+      "monster_id": "mushroom",
+      "stage": "baby",
+      "rig_tier": "full_layered",
+      "archetype": "capped_mushroom",
+      "layer_count": 8,
+      "layers": [
+        "body",
+        "eyes_open",
+        "eyes_closed",
+        "eyes_sleep",
+        "mouth_happy",
+        "mouth_neutral",
+        "mouth_eating",
+        "cap"
+      ],
+      "rig_path": "assets/monsters/mushroom/baby/rig.json",
+      "animations_path": "assets/monsters/mushroom/baby/animations.json",
+      "notes": "Calibrated multi-part layered rig with root extensions & 6 facial expression layers."
+    },
+    {
+      "species_id": "19",
+      "monster_id": "mushroom",
+      "stage": "young",
+      "rig_tier": "full_layered",
+      "archetype": "capped_mushroom",
+      "layer_count": 8,
+      "layers": [
+        "body",
+        "eyes_open",
+        "eyes_closed",
+        "eyes_sleep",
+        "mouth_happy",
+        "mouth_neutral",
+        "mouth_eating",
+        "cap"
+      ],
+      "rig_path": "assets/monsters/mushroom/young/rig.json",
+      "animations_path": "assets/monsters/mushroom/young/animations.json",
+      "notes": "Calibrated multi-part layered rig with root extensions & 6 facial expression layers."
+    },
+    {
+      "species_id": "19",
+      "monster_id": "mushroom",
+      "stage": "adult",
+      "rig_tier": "whole_body",
+      "archetype": "capped_mushroom",
+      "layer_count": 1,
+      "layers": [
+        "body"
+      ],
+      "rig_path": "assets/monsters/mushroom/adult/rig.json",
+      "animations_path": "assets/monsters/mushroom/adult/animations.json",
+      "notes": "Honest whole-body elastic rig: mushroom/adult has overlapping dense adult details (foliage/flames/accessories/limbs) that require manual artist separation & background inpainting before upgrading to full_layered."
+    },
+    {
+      "species_id": "20",
+      "monster_id": "bamboo_panda",
+      "stage": "baby",
+      "rig_tier": "full_layered",
+      "archetype": "biped_panda",
+      "layer_count": 8,
+      "layers": [
+        "body",
+        "eyes_open",
+        "eyes_closed",
+        "eyes_sleep",
+        "mouth_happy",
+        "mouth_neutral",
+        "mouth_eating",
+        "sprout"
+      ],
+      "rig_path": "assets/monsters/bamboo_panda/baby/rig.json",
+      "animations_path": "assets/monsters/bamboo_panda/baby/animations.json",
+      "notes": "Calibrated multi-part layered rig with root extensions & 6 facial expression layers."
+    },
+    {
+      "species_id": "20",
+      "monster_id": "bamboo_panda",
+      "stage": "young",
+      "rig_tier": "whole_body",
+      "archetype": "biped_panda",
+      "layer_count": 1,
+      "layers": [
+        "body"
+      ],
+      "rig_path": "assets/monsters/bamboo_panda/young/rig.json",
+      "animations_path": "assets/monsters/bamboo_panda/young/animations.json",
+      "notes": "Honest whole-body elastic rig: bamboo_panda/young has overlapping dense young details (foliage/flames/accessories/limbs) that require manual artist separation & background inpainting before upgrading to full_layered."
+    },
+    {
+      "species_id": "20",
+      "monster_id": "bamboo_panda",
+      "stage": "adult",
+      "rig_tier": "whole_body",
+      "archetype": "biped_panda",
+      "layer_count": 1,
+      "layers": [
+        "body"
+      ],
+      "rig_path": "assets/monsters/bamboo_panda/adult/rig.json",
+      "animations_path": "assets/monsters/bamboo_panda/adult/animations.json",
+      "notes": "Honest whole-body elastic rig: bamboo_panda/adult has overlapping dense adult details (foliage/flames/accessories/limbs) that require manual artist separation & background inpainting before upgrading to full_layered."
+    }
+  ]
+}

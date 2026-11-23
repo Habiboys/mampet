@@ -1,0 +1,359 @@
+{
+  "schema_version": 1,
+  "monster_id": "01",
+  "monster_slug": "fire_dragon",
+  "monster_name": "Embergon",
+  "stage": "baby",
+  "element": "fire",
+  "rarity": "rare",
+  "source_asset": "assets/monsters/fire_dragon/baby.png",
+  "source_master": "source/original.png",
+  "source_sha256": "ebf9dfc6ac9430c8cd0a6b2a73204c577dbf1bfebfe6644deda73c7f8424a112",
+  "artboard_px": [
+    1024,
+    1024
+  ],
+  "skeleton_origin_px": [
+    512,
+    870
+  ],
+  "tool": {
+    "name": "OpenBone MCP",
+    "package": "@openbone/mcp",
+    "version": "0.4.8"
+  },
+  "editable_rig": "rig/embergon_baby.obone",
+  "exports": [
+    {
+      "path": "exports/embergon_baby.obonb",
+      "format": "obonb",
+      "embedded_atlas": true,
+      "bytes": 1306257,
+      "sha256": "b12c8b50fdbdee6d000db28e06d80a059a02eb9ce7617e3e574cb9e2d7cfbbd6"
+    },
+    {
+      "path": "previews/interactive.html",
+      "format": "openbone-web",
+      "self_contained": true,
+      "bytes": 1812347,
+      "sha256": "975dac568c76e917f128594413d35fe6d56784469a0bdb75fb73ba0ceda8a5c2"
+    }
+  ],
+  "path_base": "directory of animation_manifest.json",
+  "state_machine": {
+    "name": "EmbergonBaby",
+    "entry": "idle",
+    "wake_trigger": "wake",
+    "head_click_trigger": "pet",
+    "return_state": "idle",
+    "layer": "Motion"
+  },
+  "animations": [
+    "idle",
+    "happy",
+    "pet",
+    "eat",
+    "sleep",
+    "play",
+    "special"
+  ],
+  "clips": {
+    "idle": {
+      "file": "exports/embergon_baby.obonb",
+      "format": "obonb",
+      "animation": "idle",
+      "state": "idle",
+      "trigger": null,
+      "duration_seconds": 3.4,
+      "loop": true,
+      "preview": "previews/idle.gif",
+      "preview_fps": 25
+    },
+    "happy": {
+      "file": "exports/embergon_baby.obonb",
+      "format": "obonb",
+      "animation": "happy",
+      "state": "happy",
+      "trigger": "happy",
+      "duration_seconds": 1.4,
+      "loop": false,
+      "preview": "previews/happy.gif",
+      "preview_fps": 25
+    },
+    "pet": {
+      "file": "exports/embergon_baby.obonb",
+      "format": "obonb",
+      "animation": "pet",
+      "state": "pet",
+      "trigger": "pet",
+      "duration_seconds": 1,
+      "loop": false,
+      "preview": "previews/pet.gif",
+      "preview_fps": 25
+    },
+    "eat": {
+      "file": "exports/embergon_baby.obonb",
+      "format": "obonb",
+      "animation": "eat",
+      "state": "eat",
+      "trigger": "eat",
+      "duration_seconds": 1.8,
+      "loop": false,
+      "preview": "previews/eat.gif",
+      "preview_fps": 25
+    },
+    "sleep": {
+      "file": "exports/embergon_baby.obonb",
+      "format": "obonb",
+      "animation": "sleep",
+      "state": "sleep",
+      "trigger": "sleep",
+      "duration_seconds": 3.6,
+      "loop": true,
+      "preview": "previews/sleep.gif",
+      "preview_fps": 25
+    },
+    "play": {
+      "file": "exports/embergon_baby.obonb",
+      "format": "obonb",
+      "animation": "play",
+      "state": "play",
+      "trigger": "play",
+      "duration_seconds": 2,
+      "loop": false,
+      "preview": "previews/play.gif",
+      "preview_fps": 25
+    },
+    "special": {
+      "file": "exports/embergon_baby.obonb",
+      "format": "obonb",
+      "animation": "special",
+      "state": "special",
+      "trigger": "special",
+      "duration_seconds": 1.8,
+      "loop": false,
+      "preview": "previews/special.gif",
+      "preview_fps": 25
+    }
+  },
+  "quality": {
+    "measurements": {
+      "silhouette_iou_percent": 99.942,
+      "opaque_rgb_mean_absolute_error_0_255": 0.14,
+      "matching_loop_endpoints": {
+        "idle": true,
+        "sleep": true
+      },
+      "mcp_validation": "No issues found.",
+      "mcp_simulation": {
+        "entry_exit_and_wake": true,
+        "head_tap": true,
+        "outside_tap_ignored": true
+      },
+      "mesh_playback_60_hz": {
+        "meshVertices": 788,
+        "meshTriangles": 1415,
+        "clips": {
+          "idle": {
+            "poses": 205,
+            "inversions": 0,
+            "cropped": false,
+            "bounds": [
+              116,
+              101,
+              906,
+              903
+            ],
+            "minAreaRatio": 0.8509,
+            "maxAreaRatio": 1.2026,
+            "worstTriangle": [
+              [
+                819,
+                576
+              ],
+              [
+                819,
+                597
+              ],
+              [
+                845,
+                567
+              ]
+            ]
+          },
+          "happy": {
+            "poses": 85,
+            "inversions": 0,
+            "cropped": false,
+            "bounds": [
+              93,
+              13,
+              925,
+              899
+            ],
+            "minAreaRatio": 0.3712,
+            "maxAreaRatio": 1.6488,
+            "worstTriangle": [
+              [
+                384,
+                538
+              ],
+              [
+                358,
+                537
+              ],
+              [
+                384,
+                561
+              ]
+            ]
+          },
+          "pet": {
+            "poses": 61,
+            "inversions": 0,
+            "cropped": false,
+            "bounds": [
+              122,
+              118,
+              902,
+              899
+            ],
+            "minAreaRatio": 0.497,
+            "maxAreaRatio": 2.1502,
+            "worstTriangle": [
+              [
+                384,
+                514
+              ],
+              [
+                384,
+                538
+              ],
+              [
+                410,
+                561
+              ]
+            ]
+          },
+          "eat": {
+            "poses": 109,
+            "inversions": 0,
+            "cropped": false,
+            "bounds": [
+              118,
+              85,
+              917,
+              906
+            ],
+            "minAreaRatio": 0.2716,
+            "maxAreaRatio": 1.4957,
+            "worstTriangle": [
+              [
+                794,
+                578
+              ],
+              [
+                794,
+                599
+              ],
+              [
+                819,
+                576
+              ]
+            ]
+          },
+          "sleep": {
+            "poses": 217,
+            "inversions": 0,
+            "cropped": false,
+            "bounds": [
+              112,
+              132,
+              922,
+              897
+            ],
+            "minAreaRatio": 0.2135,
+            "maxAreaRatio": 1.584,
+            "worstTriangle": [
+              [
+                742,
+                612
+              ],
+              [
+                717,
+                635
+              ],
+              [
+                742,
+                631
+              ]
+            ]
+          },
+          "play": {
+            "poses": 121,
+            "inversions": 0,
+            "cropped": false,
+            "bounds": [
+              47,
+              15,
+              993,
+              904
+            ],
+            "minAreaRatio": 0.2244,
+            "maxAreaRatio": 1.7874,
+            "worstTriangle": [
+              [
+                384,
+                538
+              ],
+              [
+                358,
+                537
+              ],
+              [
+                384,
+                561
+              ]
+            ]
+          },
+          "special": {
+            "poses": 109,
+            "inversions": 0,
+            "cropped": false,
+            "bounds": [
+              106,
+              15,
+              925,
+              899
+            ],
+            "minAreaRatio": 0.1685,
+            "maxAreaRatio": 2.0274,
+            "worstTriangle": [
+              [
+                819,
+                576
+              ],
+              [
+                819,
+                597
+              ],
+              [
+                845,
+                567
+              ]
+            ]
+          }
+        }
+      }
+    },
+    "neutral_preview": "previews/neutral.png",
+    "contact_sheet": "previews/contact_sheet.png",
+    "comparison": "previews/original_vs_reconstruction.png"
+  },
+  "runtime_compatibility": {
+    "requires": "Weighted meshes, attachment timelines and OpenBone state machines (0.4.8 export).",
+    "flutter_existing_renderer": "MamPet rig.json / animations.json loader uses a different format.",
+    "android_device_verified": false,
+    "local_playback": "Packed OBONB has an embedded texture atlas. Web preview is self-contained."
+  }
+}

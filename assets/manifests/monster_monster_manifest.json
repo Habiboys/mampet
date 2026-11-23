@@ -1,0 +1,197 @@
+{
+  "title": "FoodDex Monster Collection 2D Cartoon Assets",
+  "species_count": 20,
+  "stages": [
+    "baby",
+    "young",
+    "adult"
+  ],
+  "size_px": [
+    1024,
+    1024
+  ],
+  "format": "image/png",
+  "transparent": true,
+  "species": [
+    {
+      "id": "01",
+      "slug": "fire_dragon",
+      "stages": {
+        "baby": "assets/monsters/fire_dragon/baby.png",
+        "young": "assets/monsters/fire_dragon/young.png",
+        "adult": "assets/monsters/fire_dragon/adult.png"
+      }
+    },
+    {
+      "id": "02",
+      "slug": "leaf_gorilla",
+      "stages": {
+        "baby": "assets/monsters/leaf_gorilla/baby.png",
+        "young": "assets/monsters/leaf_gorilla/young.png",
+        "adult": "assets/monsters/leaf_gorilla/adult.png"
+      }
+    },
+    {
+      "id": "03",
+      "slug": "sky_bird",
+      "stages": {
+        "baby": "assets/monsters/sky_bird/baby.png",
+        "young": "assets/monsters/sky_bird/young.png",
+        "adult": "assets/monsters/sky_bird/adult.png"
+      }
+    },
+    {
+      "id": "04",
+      "slug": "fox",
+      "stages": {
+        "baby": "assets/monsters/fox/baby.png",
+        "young": "assets/monsters/fox/young.png",
+        "adult": "assets/monsters/fox/adult.png"
+      }
+    },
+    {
+      "id": "05",
+      "slug": "water_slime",
+      "stages": {
+        "baby": "assets/monsters/water_slime/baby.png",
+        "young": "assets/monsters/water_slime/young.png",
+        "adult": "assets/monsters/water_slime/adult.png"
+      }
+    },
+    {
+      "id": "06",
+      "slug": "leaf_spirit",
+      "stages": {
+        "baby": "assets/monsters/leaf_spirit/baby.png",
+        "young": "assets/monsters/leaf_spirit/young.png",
+        "adult": "assets/monsters/leaf_spirit/adult.png"
+      }
+    },
+    {
+      "id": "07",
+      "slug": "pink_axolotl",
+      "stages": {
+        "baby": "assets/monsters/pink_axolotl/baby.png",
+        "young": "assets/monsters/pink_axolotl/young.png",
+        "adult": "assets/monsters/pink_axolotl/adult.png"
+      }
+    },
+    {
+      "id": "08",
+      "slug": "dessert_panda",
+      "stages": {
+        "baby": "assets/monsters/dessert_panda/baby.png",
+        "young": "assets/monsters/dessert_panda/young.png",
+        "adult": "assets/monsters/dessert_panda/adult.png"
+      }
+    },
+    {
+      "id": "09",
+      "slug": "lamb",
+      "stages": {
+        "baby": "assets/monsters/lamb/baby.png",
+        "young": "assets/monsters/lamb/young.png",
+        "adult": "assets/monsters/lamb/adult.png"
+      }
+    },
+    {
+      "id": "10",
+      "slug": "bread_turtle",
+      "stages": {
+        "baby": "assets/monsters/bread_turtle/baby.png",
+        "young": "assets/monsters/bread_turtle/young.png",
+        "adult": "assets/monsters/bread_turtle/adult.png"
+      }
+    },
+    {
+      "id": "11",
+      "slug": "sea_dragon",
+      "stages": {
+        "baby": "assets/monsters/sea_dragon/baby.png",
+        "young": "assets/monsters/sea_dragon/young.png",
+        "adult": "assets/monsters/sea_dragon/adult.png"
+      }
+    },
+    {
+      "id": "12",
+      "slug": "moss_golem",
+      "stages": {
+        "baby": "assets/monsters/moss_golem/baby.png",
+        "young": "assets/monsters/moss_golem/young.png",
+        "adult": "assets/monsters/moss_golem/adult.png"
+      }
+    },
+    {
+      "id": "13",
+      "slug": "dessert_ghost",
+      "stages": {
+        "baby": "assets/monsters/dessert_ghost/baby.png",
+        "young": "assets/monsters/dessert_ghost/young.png",
+        "adult": "assets/monsters/dessert_ghost/adult.png"
+      }
+    },
+    {
+      "id": "14",
+      "slug": "bee_moth",
+      "stages": {
+        "baby": "assets/monsters/bee_moth/baby.png",
+        "young": "assets/monsters/bee_moth/young.png",
+        "adult": "assets/monsters/bee_moth/adult.png"
+      }
+    },
+    {
+      "id": "15",
+      "slug": "ice_fox",
+      "stages": {
+        "baby": "assets/monsters/ice_fox/baby.png",
+        "young": "assets/monsters/ice_fox/young.png",
+        "adult": "assets/monsters/ice_fox/adult.png"
+      }
+    },
+    {
+      "id": "16",
+      "slug": "forest_deer",
+      "stages": {
+        "baby": "assets/monsters/forest_deer/baby.png",
+        "young": "assets/monsters/forest_deer/young.png",
+        "adult": "assets/monsters/forest_deer/adult.png"
+      }
+    },
+    {
+      "id": "17",
+      "slug": "chef_penguin",
+      "stages": {
+        "baby": "assets/monsters/chef_penguin/baby.png",
+        "young": "assets/monsters/chef_penguin/young.png",
+        "adult": "assets/monsters/chef_penguin/adult.png"
+      }
+    },
+    {
+      "id": "18",
+      "slug": "mage_cat",
+      "stages": {
+        "baby": "assets/monsters/mage_cat/baby.png",
+        "young": "assets/monsters/mage_cat/young.png",
+        "adult": "assets/monsters/mage_cat/adult.png"
+      }
+    },
+    {
+      "id": "19",
+      "slug": "mushroom",
+      "stages": {
+        "baby": "assets/monsters/mushroom/baby.png",
+        "young": "assets/monsters/mushroom/young.png",
+        "adult": "assets/monsters/mushroom/adult.png"
+      }
+    },
+    {
+      "id": "20",
+      "slug": "bamboo_panda",
+      "stages": {
+        "baby": "assets/monsters/bamboo_panda/baby.png",
+        "young": "assets/monsters/bamboo_panda/young.png",
+        "adult": "assets/monsters/bamboo_panda/adult.png"
+      }
+    }
+  ]
+}

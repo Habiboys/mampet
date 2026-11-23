@@ -1,0 +1,86 @@
+# ==============================================================================
+# MamPet — Git Ignore Configuration
+# ==============================================================================
+
+# OS & Editor miscellaneous
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.class
+*.log
+*.swp
+*.swo
+*~
+.atom/
+.build/
+.buildlog/
+.history
+.svn/
+.swiftpm/
+migrate_working_dir/
+
+# JetBrains / Android Studio / IntelliJ
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# VS Code (local workspace overrides)
+.vscode/
+
+# Flutter / Dart / Pub
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+/build/
+/coverage/
+.widget_preview/
+
+# Symbolication & obfuscation outputs
+app.*.symbols
+app.*.map.json
+
+# Android / Gradle local caches & artifacts
+/android/.gradle/
+/android/.kotlin/
+/android/app/debug/
+/android/app/profile/
+/android/app/release/
+/android/local.properties
+*.apk
+*.aab
+*.ap_
+
+# Secrets, API keys & signing keystores (NEVER commit)
+.env
+.env.*
+key.properties
+**/key.properties
+**/*.keystore
+**/*.jks
+google-services.json
+**/google-services.json
+
+# Python tooling caches
+__pycache__/
+**/__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Raw source archive ZIPs at project root (keep locally on disk)
+/*.zip
+
+# Heavy regenerable QA/editor animation intermediates (runtime .obonb + manifests stay tracked)
+assets/animated_monsters/*/.*/
+assets/animated_monsters/*/*/previews/
+assets/animated_monsters/*/*/source/
+assets/animated_monsters/*/*/layers/
+assets/animated_monsters/*/*/rig/
+
+# Legacy superseded layered monster rigs (static preview PNGs in assets/monsters/<slug>/*.png stay tracked)
+assets/monsters/*/*/
