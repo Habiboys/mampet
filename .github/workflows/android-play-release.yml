@@ -10,7 +10,7 @@ on:
       track:
         description: "Track Play Console tujuan"
         type: choice
-        default: internal
+        default: alpha
         options:
           - internal
           - alpha
@@ -33,8 +33,9 @@ jobs:
     env:
       # Dibaca android/app/build.gradle.kts sebagai manifestPlaceholders["MAPS_API_KEY"]
       MAPS_API_KEY: ${{ secrets.MAPS_API_KEY }}
-      # Push ke main selalu ke internal; run manual mengikuti input.
-      PLAY_TRACK: ${{ inputs.track || 'internal' }}
+      # Push ke main selalu ke closed testing (track API: alpha);
+      # run manual mengikuti input.
+      PLAY_TRACK: ${{ inputs.track || 'alpha' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4

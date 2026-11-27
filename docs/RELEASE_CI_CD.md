@@ -8,9 +8,11 @@ Setiap `push` ke `main` akan otomatis:
    (JDK 21 wajib: Android Lint bawaan AGP 9.3.x crash `NoSuchMethodError: JavaDocParser.parseDataItem` di JDK 17)
 2. Menulis ulang keystore & `android/key.properties` dari GitHub Secrets (tidak pernah di-commit)
 3. `flutter build appbundle --release` dengan `versionCode = nomor run GitHub Actions`
-4. Mengunggah `app-release.aab` ke Play Console track **internal**
+4. Mengunggah `app-release.aab` ke Play Console **closed testing** (nama track di Play Developer API: `alpha`)
 
 Selain push, bisa dijalankan manual: **Actions → Android Play Release → Run workflow** (pilih track `internal` / `alpha` / `beta` / `production`).
+
+Padanan nama track di Play Developer API: `internal` = Internal testing, `alpha` = Closed testing, `beta` = Open testing, `production` = Production. Push ke `main` memakai `alpha` (closed testing).
 
 ---
 
@@ -115,4 +117,4 @@ Workflow ini **tidak** menjalankan test — tujuannya build & deploy. Kalau ingi
 | `Version code ... has already been used` | Lihat bagian 4 (offset build number). |
 | `The caller does not have permission` | Service account belum di-invite di Play Console atau izin release belum dicentang. |
 | `Package not found` | App `com.habiboys.mampet` belum ada di Play Console (upload AAB manual sekali). |
-| Upload sukses tapi tidak muncul | Rilis `completed` di track internal tetap butuh waktu propagasi; cek tab *Internal testing*. |
+| Upload sukses tapi tidak muncul | Rilis `completed` tetap butuh waktu propagasi; cek tab *Closed testing* (track `alpha`). Kalau track closed testing belum punya daftar tester/negara, atur dulu di Play Console. |
