@@ -39,11 +39,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup JDK 17
+      # AGP 9.3.x menjalankan Android Lint dengan intellij-core yang memanggil
+      # java.util.List.removeLast() (API JDK 21), jadi build release gagal di
+      # JDK 17. JDK 21 wajib di sini; bytecode app tetap target 17.
+      - name: Setup JDK 21
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: "17"
+          java-version: "21"
 
       - name: Setup Flutter
         uses: subosito/flutter-action@v2

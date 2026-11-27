@@ -4,7 +4,8 @@ Workflow: [`.github/workflows/android-play-release.yml`](../.github/workflows/an
 
 Setiap `push` ke `main` akan otomatis:
 
-1. Checkout repo + setup JDK 17 + Flutter 3.50.1
+1. Checkout repo + setup JDK 21 + Flutter 3.50.1
+   (JDK 21 wajib: Android Lint bawaan AGP 9.3.x crash `NoSuchMethodError: JavaDocParser.parseDataItem` di JDK 17)
 2. Menulis ulang keystore & `android/key.properties` dari GitHub Secrets (tidak pernah di-commit)
 3. `flutter build appbundle --release` dengan `versionCode = nomor run GitHub Actions`
 4. Mengunggah `app-release.aab` ke Play Console track **internal**
