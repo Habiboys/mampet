@@ -1,5 +1,6 @@
-package com.example.mampet
+package com.habiboys.mampet
 
+import android.app.Activity
 import android.appwidget.AppWidgetManager
 import android.content.ComponentName
 import android.content.Context
@@ -7,6 +8,12 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Build
 import androidx.core.content.FileProvider
+import com.google.android.play.core.appupdate.AppUpdateInfo
+import com.google.android.play.core.appupdate.AppUpdateManager
+import com.google.android.play.core.appupdate.AppUpdateManagerFactory
+import com.google.android.play.core.appupdate.AppUpdateOptions
+import com.google.android.play.core.install.model.AppUpdateType
+import com.google.android.play.core.install.model.UpdateAvailability
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodChannel
@@ -15,6 +22,10 @@ import java.io.File
 class MainActivity : FlutterActivity() {
     private val widgetChannelName = "com.mampet.app/home_widget"
     private val shareChannelName = "com.mampet.app/share"
+    private val updateChannelName = "com.mampet.app/app_update"
+
+    private var appUpdateManager: AppUpdateManager? = null
+    private var updateChannel: MethodChannel? = null
 
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)
@@ -94,6 +105,95 @@ class MainActivity : FlutterActivity() {
                     else -> result.notImplemented()
                 }
             }
+
+        setUpAppUpdates(flutterEngine)
+    }
+
+    private fun setUpAppUpdates(engine: FlutterEngine) {
+        val manager = AppUpdateManagerFactory.create(applicationContext)
+        appUpdateManager = manager
+        updateChannel = MethodChannel(engine.dartExecutor.binaryMessenger, updateChannelName)
+            .also { channel ->
+                channel.setMethodCallHandler { call, result ->
+                    when (call.method) {
+                        "startImmediateUpdate" -> startImmediateUpdate(manager, result)
+                        "openStore" -> {
+                            openPlayStore()
+                            result.success(true)
+                        }
+
+                        else -> result.notImplemented()
+                    }
+                }
+            }
+    }
+
+    private fun startImmediateUpdate(
+        manager: AppUpdateManager,
+        result: MethodChannel.Result,
+    ) {
+        manager.appUpdateInfo.addOnSuccessListener { info ->
+            when {
+                info.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE ->
+                    result.success(if (startImmediateFlow(manager, info)) "started" else "failed")
+
+                info.updateAvailability() == UpdateAvailability.UPDATE_NOT_AVAILABLE ->
+                    result.success("no_update")
+
+                else -> result.success("failed")
+            }
+        }.addOnFailureListener { result.success("failed") }
+    }
+
+    /** Starts the full-screen, non-dismissible Play update flow. */
+    private fun startImmediateFlow(manager: AppUpdateManager, info: AppUpdateInfo): Boolean =
+        try {
+            val options = AppUpdateOptions.newBuilder(AppUpdateType.IMMEDIATE)
+                .setAllowAssetPackDeletion(true)
+                .build()
+            manager.startUpdateFlowForResult(info, this, options, REQUEST_APP_UPDATE)
+            true
+        } catch (_: Exception) {
+            false
+        }
+
+    /** Resumes a mandatory update that was interrupted, e.g. by a process kill. */
+    override fun onResume() {
+        super.onResume()
+        val manager = appUpdateManager ?: return
+        manager.appUpdateInfo.addOnSuccessListener { info ->
+            if (info.updateAvailability() ==
+                UpdateAvailability.DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS
+            ) {
+                startImmediateFlow(manager, info)
+            }
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode != REQUEST_APP_UPDATE) return
+        if (resultCode == Activity.RESULT_OK) {
+            updateChannel?.invokeMethod("updateCompleted", null)
+        } else {
+            updateChannel?.invokeMethod("updateCancelled", null)
+        }
+    }
+
+    private fun openPlayStore() {
+        try {
+            startActivity(
+                Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=$packageName"))
+                    .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            )
+        } catch (_: Exception) {
+            startActivity(
+                Intent(
+                    Intent.ACTION_VIEW,
+                    Uri.parse("https://play.google.com/store/apps/details?id=$packageName")
+                ).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            )
+        }
     }
 
     private fun findWhatsAppPackage(): String? {
@@ -140,5 +240,9 @@ class MainActivity : FlutterActivity() {
         } catch (_: Exception) {
             false
         }
+    }
+
+    companion object {
+        private const val REQUEST_APP_UPDATE = 4201
     }
 }

@@ -41,7 +41,7 @@
             android:label="MamPet Partner">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-                <action android:name="com.example.mampet.ACTION_PET_INTERACT" />
+                <action android:name="com.habiboys.mampet.ACTION_PET_INTERACT" />
             </intent-filter>
             <meta-data
                 android:name="android.appwidget.provider"

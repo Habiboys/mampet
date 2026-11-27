@@ -1,0 +1,115 @@
+name: Android Play Release
+
+# Setiap push ke main -> build AAB bertanda tangan -> upload ke Google Play Console.
+# Bisa juga dijalankan manual (Actions > Android Play Release > Run workflow) dengan pilihan track.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      track:
+        description: "Track Play Console tujuan"
+        type: choice
+        default: internal
+        options:
+          - internal
+          - alpha
+          - beta
+          - production
+
+# Jangan biarkan dua rilis berjalan bersamaan; antrekan saja.
+concurrency:
+  group: play-release
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  release:
+    name: Build AAB & upload ke Play
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      # Dibaca android/app/build.gradle.kts sebagai manifestPlaceholders["MAPS_API_KEY"]
+      MAPS_API_KEY: ${{ secrets.MAPS_API_KEY }}
+      # Push ke main selalu ke internal; run manual mengikuti input.
+      PLAY_TRACK: ${{ inputs.track || 'internal' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "3.50.1"
+          channel: stable
+          cache: true
+
+      # Keystore tidak pernah masuk repo: disimpan sebagai secret base64,
+      # lalu ditulis ulang ke android/upload-keystore.jks + android/key.properties.
+      - name: Siapkan signing key
+        env:
+          KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          STORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+        run: |
+          set -euo pipefail
+          if [ -z "${KEYSTORE_BASE64:-}" ]; then
+            echo "::error::Secret ANDROID_KEYSTORE_BASE64 belum diisi."
+            exit 1
+          fi
+          if [ -z "${STORE_PASSWORD:-}" ] || [ -z "${KEY_ALIAS:-}" ]; then
+            echo "::error::Secret ANDROID_KEYSTORE_PASSWORD / ANDROID_KEY_ALIAS belum diisi."
+            exit 1
+          fi
+
+          printf '%s' "$KEYSTORE_BASE64" | base64 --decode > android/upload-keystore.jks
+          test -s android/upload-keystore.jks || { echo "::error::Keystore gagal didekode."; exit 1; }
+
+          {
+            echo "storePassword=$STORE_PASSWORD"
+            echo "keyPassword=${KEY_PASSWORD:-$STORE_PASSWORD}"
+            echo "keyAlias=$KEY_ALIAS"
+            echo "storeFile=upload-keystore.jks"
+          } > android/key.properties
+
+          echo "Keystore siap ($(wc -c < android/upload-keystore.jks) byte)."
+
+      - name: Ambil dependensi
+        run: flutter pub get
+
+      # versionCode diambil dari nomor run supaya selalu naik dan Play tidak menolak
+      # "version code sudah dipakai". Dialihkan +100 supaya build manual/lokal
+      # (versionCode 1-99) tidak bentrok dengan run CI pertama.
+      # versionName tetap dari pubspec.yaml.
+      - name: Build App Bundle (release)
+        run: |
+          set -euo pipefail
+          flutter build appbundle --release \
+            --build-number="$((GITHUB_RUN_NUMBER + 100))"
+          ls -lh build/app/outputs/bundle/release/app-release.aab
+
+      - name: Simpan artefak AAB
+        uses: actions/upload-artifact@v4
+        with:
+          name: mampet-aab-${{ github.run_number }}
+          path: build/app/outputs/bundle/release/app-release.aab
+          retention-days: 14
+
+      - name: Upload ke Google Play Console
+        uses: r0adkll/upload-google-play@v1.1.5
+        with:
+          serviceAccountJsonPlainText: ${{ secrets.PLAY_SERVICE_ACCOUNT_JSON }}
+          packageName: com.habiboys.mampet
+          releaseFiles: build/app/outputs/bundle/release/app-release.aab
+          # `tracks` (bukan `track`) sejak v1.1.4; default-nya production, jadi selalu ditulis eksplisit.
+          tracks: ${{ env.PLAY_TRACK }}
+          status: completed

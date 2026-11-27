@@ -22,8 +22,9 @@ import 'app_shell.dart';
 GoRouter createMamPetRouter({
   required bool onboardingDone,
   bool showSplash = true,
+  GlobalKey<NavigatorState>? navigatorKey,
 }) {
-  final rootNavigatorKey = GlobalKey<NavigatorState>();
+  final rootNavigatorKey = navigatorKey ?? GlobalKey<NavigatorState>();
 
   return GoRouter(
     navigatorKey: rootNavigatorKey,
@@ -35,10 +36,7 @@ GoRouter createMamPetRouter({
         path: '/splash',
         builder: (_, _) => SplashScreen(onboardingDone: onboardingDone),
       ),
-      GoRoute(
-        path: '/onboarding',
-        builder: (_, _) => const OnboardingScreen(),
-      ),
+      GoRoute(path: '/onboarding', builder: (_, _) => const OnboardingScreen()),
       StatefulShellRoute.indexedStack(
         builder: (context, state, navigationShell) {
           return AppShell(navigationShell: navigationShell);
@@ -46,18 +44,12 @@ GoRouter createMamPetRouter({
         branches: [
           StatefulShellBranch(
             routes: [
-              GoRoute(
-                path: '/home',
-                builder: (_, _) => const HomeScreen(),
-              ),
+              GoRoute(path: '/home', builder: (_, _) => const HomeScreen()),
             ],
           ),
           StatefulShellBranch(
             routes: [
-              GoRoute(
-                path: '/log',
-                builder: (_, _) => const MealLogScreen(),
-              ),
+              GoRoute(path: '/log', builder: (_, _) => const MealLogScreen()),
             ],
           ),
           StatefulShellBranch(
@@ -97,23 +89,20 @@ GoRouter createMamPetRouter({
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/log/edit/:id',
-        builder: (_, state) => MealLogScreen(
-          editSessionId: state.pathParameters['id'],
-        ),
+        builder: (_, state) =>
+            MealLogScreen(editSessionId: state.pathParameters['id']),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/fooddex/category/:id',
-        builder: (_, state) => FoodCategoryDetailScreen(
-          categoryId: state.pathParameters['id']!,
-        ),
+        builder: (_, state) =>
+            FoodCategoryDetailScreen(categoryId: state.pathParameters['id']!),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/fooddex/food/:id',
-        builder: (_, state) => FoodDetailScreen(
-          foodId: state.pathParameters['id']!,
-        ),
+        builder: (_, state) =>
+            FoodDetailScreen(foodId: state.pathParameters['id']!),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
@@ -123,9 +112,8 @@ GoRouter createMamPetRouter({
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/monster/:id',
-        builder: (_, state) => MonsterDetailScreen(
-          speciesId: state.pathParameters['id']!,
-        ),
+        builder: (_, state) =>
+            MonsterDetailScreen(speciesId: state.pathParameters['id']!),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
@@ -135,9 +123,8 @@ GoRouter createMamPetRouter({
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/nursery/hatch/:id',
-        builder: (_, state) => HatchAnimationScreen(
-          eggId: state.pathParameters['id']!,
-        ),
+        builder: (_, state) =>
+            HatchAnimationScreen(eggId: state.pathParameters['id']!),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
@@ -148,7 +135,9 @@ GoRouter createMamPetRouter({
         parentNavigatorKey: rootNavigatorKey,
         path: '/history',
         builder: (_, state) => MealHistoryScreen(
-          initialTabIndex: state.uri.queryParameters['tab'] == 'gallery' ? 1 : 0,
+          initialTabIndex: state.uri.queryParameters['tab'] == 'gallery'
+              ? 1
+              : 0,
         ),
       ),
       GoRoute(

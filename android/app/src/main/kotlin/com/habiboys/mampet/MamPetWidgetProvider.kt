@@ -1,4 +1,4 @@
-package com.example.mampet
+package com.habiboys.mampet
 
 import android.app.PendingIntent
 import android.appwidget.AppWidgetManager
@@ -39,7 +39,7 @@ class MamPetWidgetProvider : AppWidgetProvider() {
 
     companion object {
         const val PREFS_NAME = "mampet_home_widget"
-        const val ACTION_PET_INTERACT = "com.example.mampet.ACTION_PET_INTERACT"
+        const val ACTION_PET_INTERACT = "com.habiboys.mampet.ACTION_PET_INTERACT"
 
         private val MOOD_QUOTES = arrayOf(
             "Yuk catat makan hari ini!",

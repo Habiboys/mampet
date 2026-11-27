@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../core/providers/app_providers.dart';
+import 'app_update_gate.dart';
 import 'router.dart';
 import 'theme.dart';
 
@@ -23,6 +24,7 @@ class MamPetApp extends ConsumerStatefulWidget {
 
 class _MamPetAppState extends ConsumerState<MamPetApp> {
   late final GoRouter _router;
+  final GlobalKey<NavigatorState> _navigatorKey = GlobalKey<NavigatorState>();
 
   @override
   void initState() {
@@ -30,6 +32,7 @@ class _MamPetAppState extends ConsumerState<MamPetApp> {
     _router = createMamPetRouter(
       onboardingDone: widget.onboardingDone,
       showSplash: widget.showSplash,
+      navigatorKey: _navigatorKey,
     );
   }
 
@@ -61,11 +64,12 @@ class _MamPetAppState extends ConsumerState<MamPetApp> {
       darkTheme: MamPetTheme.dark(),
       themeMode: _resolveThemeMode(settings?.themeMode),
       routerConfig: _router,
+      builder: (context, child) => AppUpdateGate(
+        navigatorKey: _navigatorKey,
+        child: child ?? const SizedBox.shrink(),
+      ),
       locale: const Locale('id', 'ID'),
-      supportedLocales: const [
-        Locale('id', 'ID'),
-        Locale('en', 'US'),
-      ],
+      supportedLocales: const [Locale('id', 'ID'), Locale('en', 'US')],
       localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,

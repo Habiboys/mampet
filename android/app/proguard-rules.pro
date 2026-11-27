@@ -1,5 +1,5 @@
 # Keep MamPet Android Home Screen Widget & MainActivity
--keep class com.example.mampet.** { *; }
+-keep class com.habiboys.mampet.** { *; }
 
 # Keep Flutter & Google Maps / Play Services classes cleanly
 -keep class io.flutter.app.** { *; }
